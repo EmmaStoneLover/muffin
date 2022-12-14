@@ -1,32 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import useDarkMode from "./hooks/useDarkMode"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [mode, setMode] = useDarkMode()
 
   return (
-    <div className="App">
-      <div className='flex'>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/viterenar/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className='text-6xl'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className="w-screen h-screen flex justify-center items-center dark:bg-black dark:text-white">
+      <p className="text-4xl">Fuck</p>
+      <button className="fixed top-2 right-2" onClick={setMode}>{ mode ? 'dark' : 'light' }</button>
     </div>
   )
 }
